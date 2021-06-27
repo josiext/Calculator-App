@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="./assets/favicon-48x48.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Calculator App</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="header__title">calc</h1>
+
+        <div class="header__theme">
+          <label class="switch">
+            <input type="checkbox" id='theme_checkbox'>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="result" id='result-view'>
+        <div class="result__content">
+          <span id="result_previous"></span>
+          <div id="result_operator"></div>
+          <span id="result_current">0</span>
+        </div>
+      </div>
+
+      <div class="pannel">
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="7"
+        >
+          7
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="8"
+        >
+          8
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="9"
+        >
+          9
+        </button>
+        <button
+          type="button"
+          id="calculator_action_btn"
+          class="pannel__btn pannel__btn--dels"
+          value="del"
+        >
+          DEL
+        </button>
+
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="4"
+        >
+          4
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="5"
+        >
+          5
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="6"
+        >
+          6
+        </button>
+        <button
+          type="button"
+          id="calculator_operator_btn"
+          class="pannel__btn"
+          value="+"
+        >
+          +
+        </button>
+
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="1"
+        >
+          1
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="2"
+        >
+          2
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="3"
+        >
+          3
+        </button>
+        <button
+          type="button"
+          id="calculator_operator_btn"
+          class="pannel__btn"
+          value="-"
+        >
+          -
+        </button>
+
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="."
+        >
+          .
+        </button>
+        <button
+          type="button"
+          id="calculator_number_btn"
+          class="pannel__btn"
+          value="0"
+        >
+          0
+        </button>
+        <button
+          type="button"
+          id="calculator_operator_btn"
+          class="pannel__btn"
+          value="/"
+        >
+          /
+        </button>
+        <button
+          type="button"
+          id="calculator_operator_btn"
+          class="pannel__btn"
+          value="x"
+        >
+          x
+        </button>
+
+        <button
+          type="button"
+          id="calculator_action_btn"
+          class="pannel__btn pannel__btn--span-two pannel__btn--dels"
+          value="clear-all"
+        >
+          RESET
+        </button>
+        <button
+          type="button"
+          id="calculator_equal_btn"
+          class="pannel__btn pannel__btn--span-two pannel__btn--equal"
+          value="="
+        >
+          =
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="bundle.js"></script>
+</html>
