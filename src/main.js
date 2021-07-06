@@ -1,3 +1,5 @@
+"use strict";
+
 /* global require */
 
 /**
@@ -6,6 +8,7 @@
 
 const R = require("ramda");
 const H = require("./utils/handlers");
+const { Storage } = require("./utils/business");
 
 /**
  * Adding Handlers To The DOM
@@ -27,9 +30,12 @@ document.body.addEventListener("click", (e) =>
 
 // Checkbock Handler
 
-document
-  .getElementById("theme_checkbox")
-  .addEventListener(
-    "change",
-    R.pipe(R.path(["target", "checked"]), H.handleChangeTheme)
-  );
+const checkBoxTheme = document.getElementById("theme_checkbox");
+
+checkBoxTheme.addEventListener(
+  "change",
+  R.pipe(R.path(["target", "checked"]), H.handleChangeTheme)
+);
+
+checkBoxTheme.checked = Storage.theme.get() === "light" ? true : false;
+checkBoxTheme.dispatchEvent(new Event("change"));

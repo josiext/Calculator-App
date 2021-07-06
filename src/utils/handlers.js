@@ -69,6 +69,8 @@ const handleCalculatorEqual = () => {
 const handleChangeTheme = (flag) => {
   if (flag === true) setTheme(THEMES.LIGHT);
   if (flag === false) setTheme(THEMES.DARK);
+
+  localStorage.setItem("theme", flag ? "light" : "dark");
 };
 
 /**

@@ -34,8 +34,15 @@ const doOperation = ({ operator, nr1, nr2 }) => {
   return getResult(operator);
 };
 
+const Storage = {
+  theme: {
+    get: () => localStorage.getItem("theme"),
+    set: (v) => localStorage.setItem("theme", v),
+  },
+};
+
 /**
  * Module Exports
  */
 
-module.exports = { doOperation };
+module.exports = { doOperation, Storage };
