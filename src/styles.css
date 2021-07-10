@@ -1,3 +1,5 @@
+/** Scrollbar style **/
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -11,6 +13,8 @@
   background: var(--color-primary);
   border-radius: 10px;
 }
+
+/** global **/
 
 :root {
   /** Colors */
@@ -34,22 +38,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Spartan, serif;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
   background-color: var(--color-primary);
   min-width: 350px;
-  font-size: 32px;
-  font-family: Spartan, serif;
 }
 
 button {
   cursor: pointer;
 }
+
+/** classes & ids **/
 
 .container {
   width: 100%;
@@ -80,14 +86,14 @@ button {
 }
 
 .header__title {
-  font-size: 1em;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 .result {
   background-color: var(--color-primary-dark);
   margin-top: 1.5rem;
-  padding: 0.7em;
+  padding: 1rem;
   color: var(--font-color-on-primary-dark);
   font-weight: 700;
   display: flex;
@@ -98,6 +104,7 @@ button {
 .result__content {
   display: flex;
   overflow-x: auto;
+  font-size: 2rem;
 }
 
 .pannel {
@@ -118,7 +125,7 @@ button {
   overflow: hidden hidden;
   border-radius: 0.7rem;
   border: 0;
-  font-size: 1em;
+  font-size: 1.3rem;
 }
 
 .pannel__btn--span-two {
@@ -128,12 +135,13 @@ button {
 .pannel__btn--equal {
   background-color: var(--color-secondary);
   color: var(--font-color-on-secondary);
+  font-size: 2rem;
 }
 
 .pannel__btn--dels {
   background-color: var(--color-primary);
   color: var(--font-color-on-primary);
-  font-size: 0.5em;
+  font-size: 1rem;
 }
 
 /** silder */

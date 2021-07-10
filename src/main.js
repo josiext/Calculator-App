@@ -7,20 +7,23 @@
  */
 
 const R = require("ramda");
-const H = require("./utils/handlers");
+const Handler = require("./utils/handlers");
 const { Storage } = require("./utils/business");
 
 /**
  * Adding Handlers To The DOM
  */
 
-// Btns Handlers
+// Button Handlers
 
 const getBtnHandler = R.cond([
-  [R.equals("calculator_number_btn"), R.always(H.handleCalculatorNumber)],
-  [R.equals("calculator_action_btn"), R.always(H.handleCalculatorAction)],
-  [R.equals("calculator_operator_btn"), R.always(H.handleCalculatorOperator)],
-  [R.equals("calculator_equal_btn"), R.always(H.handleCalculatorEqual)],
+  [R.equals("calculator_number_btn"), R.always(Handler.handleCalculatorNumber)],
+  [R.equals("calculator_action_btn"), R.always(Handler.handleCalculatorAction)],
+  [
+    R.equals("calculator_operator_btn"),
+    R.always(Handler.handleCalculatorOperator),
+  ],
+  [R.equals("calculator_equal_btn"), R.always(Handler.handleCalculatorEqual)],
   [R.T, R.always(() => undefined)],
 ]);
 
@@ -34,8 +37,13 @@ const checkBoxTheme = document.getElementById("theme_checkbox");
 
 checkBoxTheme.addEventListener(
   "change",
-  R.pipe(R.path(["target", "checked"]), H.handleChangeTheme)
+  R.pipe(R.path(["target", "checked"]), Handler.handleChangeTheme)
 );
 
-checkBoxTheme.checked = Storage.theme.get() === "light" ? true : false;
+checkBoxTheme.checked = R.ifElse(
+  R.equals("light"),
+  R.always(true),
+  R.always(false)
+)(Storage.theme.get());
+
 checkBoxTheme.dispatchEvent(new Event("change"));
