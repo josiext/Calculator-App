@@ -57,14 +57,14 @@ button {
 
 /** classes & ids **/
 
-.container {
+#container {
   width: 100%;
   max-width: 400px;
   padding: 1rem 1rem;
 }
 
 @media (min-width: 576px) {
-  .container {
+  #container {
     width: 40vw;
     min-width: 450px;
     max-width: none;
@@ -72,7 +72,7 @@ button {
 }
 
 @media (min-width: 768px) {
-  .container {
+  #container {
     width: 50vw;
     max-width: 500px;
   }
