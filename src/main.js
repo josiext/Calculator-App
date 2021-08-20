@@ -17,13 +17,13 @@ const { Storage } = require("./utils/business");
 // Button Handlers
 
 const getBtnHandler = R.cond([
-  [R.equals("calculator_number_btn"), R.always(Handler.handleCalculatorNumber)],
-  [R.equals("calculator_action_btn"), R.always(Handler.handleCalculatorAction)],
+  [R.test(/calculator-btn-action/), R.always(Handler.handleCalculatorAction)],
+  [R.test(/calculator-btn-number/), R.always(Handler.handleCalculatorNumber)],
   [
-    R.equals("calculator_operator_btn"),
+    R.test(/calculator-btn-operation/),
     R.always(Handler.handleCalculatorOperator),
   ],
-  [R.equals("calculator_equal_btn"), R.always(Handler.handleCalculatorEqual)],
+  [R.equals("calculator-btn-equal"), R.always(Handler.handleCalculatorEqual)],
   [R.T, R.always(() => undefined)],
 ]);
 

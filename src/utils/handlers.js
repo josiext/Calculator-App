@@ -18,6 +18,8 @@ const { CONFIGS, THEMES } = require("./constants");
 const handleCalculatorAction = (newAction) => {
   const current = R.prop("current", getValuesInScreen());
 
+  console.log(newAction);
+
   if (newAction === "clear-all")
     setValuesInScreen({ prev: "", operator: "", current: "0" });
 
@@ -43,6 +45,8 @@ const handleCalculatorNumber = (number) => {
 
 const handleCalculatorOperator = (newOperator) => {
   let { current, prev, operator } = getValuesInScreen();
+
+  console.log(newOperator);
 
   if (prev !== "" && current !== "") {
     prev = doOperation({ nr2: current, nr1: prev, operator });
