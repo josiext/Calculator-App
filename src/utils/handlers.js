@@ -25,17 +25,17 @@ const handleCalculatorAction = (newAction) => {
     setValuesInScreen({ current: current.slice(0, -1) || "0" });
 };
 
-const handleCalculatorNumber = (newValue) => {
+const handleCalculatorNumber = (number) => {
   const current = R.prop("current", getValuesInScreen());
 
   if (current.length >= CONFIGS.LENGTH_LIMIT) return;
 
-  if (Number(newValue) || newValue === "0") {
-    if (current === "0") setValuesInScreen({ current: newValue });
-    else setValuesInScreen({ current: current + newValue });
+  if (Number(number) || number === "0") {
+    if (current === "0") setValuesInScreen({ current: number });
+    else setValuesInScreen({ current: current + number });
   }
 
-  if (newValue === ".") {
+  if (number === ".") {
     const newCurrent = current.replace(".", "") + ".";
     setValuesInScreen({ current: newCurrent });
   }
