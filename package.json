@@ -4,8 +4,10 @@
   "description": "Calculator App",
   "main": "src/index.html",
   "scripts": {
+    "start": "npm run build & npm run serve",
     "dev": "watchify src/main.js -o src/bundle.js",
-    "build": "browserify src/main.js > src/bundle.js"
+    "build": "browserify src/main.js > src/bundle.js",
+    "serve": "serve src"
   },
   "author": "Jose Nunez",
   "license": "ISC",
