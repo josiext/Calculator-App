@@ -2,7 +2,7 @@
   "name": "calculator-app",
   "version": "1.0.0",
   "description": "Calculator App",
-  "main": "src/index.js",
+  "main": "src/index.html",
   "scripts": {
     "dev": "watchify src/main.js -o src/bundle.js",
     "build": "browserify src/main.js > src/bundle.js"
