@@ -9,7 +9,7 @@
     "build": "browserify src/main.js > src/bundle.js",
     "serve": "serve src"
   },
-  "author": "Jose Nunez",
+  "author": "José Núñez",
   "license": "ISC",
   "devDependencies": {
     "eslint": "7.29.0",
